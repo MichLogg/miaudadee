@@ -7,6 +7,23 @@ const resultadoConteudo = document.getElementById("resultado-conteudo");
 const idadeHumana = document.getElementById("idade-humana");
 const faseVida = document.getElementById("fase-vida");
 
+function impedirNegativo(campo) {
+  campo.addEventListener("input", function () {
+    if (campo.value !== "" && Number(campo.value) < 0) {
+      campo.value = campo.value.replace("-", "");
+    }
+  });
+
+  campo.addEventListener("keydown", function (evento) {
+    if (evento.key === "-" || evento.key === "Subtract") {
+      evento.preventDefault();
+    }
+  });
+}
+
+impedirNegativo(campoAnos);
+impedirNegativo(campoMeses);
+
 botaoCalcular.addEventListener("click", function () {
   const anos = Number(campoAnos.value);
   const meses = Number(campoMeses.value);
