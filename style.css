@@ -1,0 +1,773 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-principal);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+  --color1: #c4e5f6;
+  --color2: #d3ecf8;
+  --color3: #e2f2fb;
+  --color4: #f0f9fd;
+  --color5: #ffffff;
+
+  --cor-azul: var(--color1);
+  --cor-azul-medio: var(--color2);
+  --cor-azul-suave: var(--color3);
+  --cor-azul-claro: var(--color4);
+  --cor-branco: var(--color5);
+
+  --cor-azul-forte: #4fa8db;
+  --cor-azul-forte-escuro: #2f86b8;
+
+  --cor-texto-principal: #000000;
+  --cor-texto-secundario: #121d26;
+
+  --cor-borda: var(--cor-azul-medio);
+  --cor-fundo-pagina: var(--cor-azul-claro);
+
+  --fonte-base: "Segoe UI", -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 0.85rem;
+  --espaco-md: 1.25rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 3rem;
+
+  --raio-borda: 12px;
+  --raio-borda-pequeno: 8px;
+
+  --sombra-suave: 0 8px 25px rgba(35, 49, 61, 0.08);
+  --sombra-botao: 0 8px 18px rgba(47, 134, 184, 0.28);
+}
+
+/* =========================
+   FUNDO COM GATOS
+========================= */
+
+.fundo-gatos {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.carrossel-gatos {
+  position: absolute;
+  left: -15%;
+  width: 130%;
+  height: 130px;
+  overflow: visible;
+  transform: rotate(-20deg);
+}
+
+.esteira-gatos {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  width: max-content;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.gato-fundo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.carrossel-1 {
+  top: -5%;
+}
+
+.carrossel-2 {
+  top: 15%;
+}
+
+.carrossel-3 {
+  top: 35%;
+}
+
+.carrossel-4 {
+  top: 55%;
+}
+
+.carrossel-5 {
+  top: 75%;
+}
+
+.carrossel-6 {
+  top: 95%;
+}
+
+.carrossel-1 .esteira-gatos,
+.carrossel-3 .esteira-gatos,
+.carrossel-5 .esteira-gatos {
+  animation-name: gatosEsquerda;
+}
+
+.carrossel-2 .esteira-gatos,
+.carrossel-4 .esteira-gatos,
+.carrossel-6 .esteira-gatos {
+  animation-name: gatosDireita;
+}
+
+.carrossel-1 .esteira-gatos,
+.carrossel-2 .esteira-gatos,
+.carrossel-3 .esteira-gatos,
+.carrossel-4 .esteira-gatos,
+.carrossel-5 .esteira-gatos,
+.carrossel-6 .esteira-gatos {
+  animation-duration: 190s;
+}
+
+@keyframes gatosEsquerda {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gatosDireita {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.pagina {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 40px 35px 60px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+  background-color: #c4e5f6;
+  border-radius: 12px;
+
+  width: 100%;
+  min-height: 120px;
+
+  padding: 25px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow: var(--sombra-suave);
+}
+
+.titulo-principal {
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  color: var(--cor-texto-principal);
+}
+
+.subtitulo-cabecalho {
+  margin-top: 8px;
+
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+
+  color: var(--cor-texto-secundario);
+
+  max-width: 800px;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.linha-topo {
+  display: flex;
+  flex-direction: row;
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+
+.imagem-gato {
+  width: 50%;
+  min-height: 400px;
+  background-color: var(--cor-azul-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--raio-borda);
+}
+
+.imagem-gato img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.imagem-gato-texto {
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: var(--cor-azul-forte-escuro);
+
+  padding: 20px;
+  text-align: center;
+}
+
+/* =========================
+   CALCULADORA
+========================= */
+
+.calculadora {
+  width: 50%;
+
+  background-color: var(--cor-branco);
+
+  box-shadow: var(--sombra-suave);
+
+  padding: 35px;
+
+  border-radius: var(--raio-borda);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.titulo-calculadora {
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  font-weight: 600;
+}
+
+.descricao-calculadora {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.rotulo-idade {
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  color: var(--cor-texto-principal);
+}
+
+.campo-idade-composta {
+  border: none;
+
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.campo-idade-composta .rotulo-idade {
+  padding: 0;
+}
+
+.grupo-idade {
+  display: flex;
+
+  gap: 15px;
+}
+
+.campo-idade-unidade {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.campo-anos,
+.campo-meses {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  font-size: 1rem;
+  font-family: inherit;
+
+  color: var(--cor-texto-principal);
+
+  background-color: var(--cor-branco);
+
+  border: 1px solid var(--cor-borda);
+
+  border-radius: var(--raio-borda-pequeno);
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.campo-anos::placeholder,
+.campo-meses::placeholder {
+  color: #9fb7c7;
+}
+
+.campo-anos:focus,
+.campo-meses:focus {
+  outline: none;
+
+  border-color: var(--cor-azul-forte);
+
+  box-shadow: 0 0 0 3px var(--cor-azul);
+}
+
+.rotulo-unidade-input {
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  color: var(--cor-texto-secundario);
+
+  text-align: center;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao-calcular {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 14px 20px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--cor-branco);
+
+  background-color: var(--cor-azul-forte);
+
+  border: none;
+  border-radius: 8px;
+
+  box-shadow: var(--sombra-botao);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.botao-calcular:hover {
+  background-color: var(--cor-azul-forte-escuro);
+}
+
+.botao-calcular:active {
+  transform: translateY(1px);
+}
+
+.botao-calcular:focus-visible {
+  outline: 2px solid var(--cor-azul-forte-escuro);
+  outline-offset: 2px;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado {
+  background-color: var(--cor-azul-claro);
+
+  border: 1px solid var(--cor-azul);
+
+  padding: 25px;
+
+  border-radius: var(--raio-borda);
+
+  text-align: center;
+}
+
+.resultado-vazio {
+  font-size: 0.95rem;
+
+  color: var(--cor-texto-secundario);
+}
+
+.resultado-conteudo {
+  display: none;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.resultado-rotulo {
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  color: var(--cor-texto-secundario);
+}
+
+.idade-humana {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+  font-weight: 700;
+
+  color: var(--cor-azul-forte-escuro);
+}
+
+.fase-vida {
+  font-size: 0.95rem;
+
+  color: var(--cor-texto-secundario);
+}
+
+/* =========================
+   INFORMAÇÃO
+========================= */
+
+.informacao {
+  background-color: var(--cor-branco);
+
+  border-left: 4px solid var(--cor-azul-forte);
+
+  padding: 20px;
+
+  border-radius: 0 var(--raio-borda-pequeno) var(--raio-borda-pequeno) 0;
+
+  box-shadow: var(--sombra-suave);
+}
+
+.informacao-titulo {
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  margin-bottom: var(--espaco-xs);
+}
+
+.informacao-texto {
+  font-size: 0.9rem;
+
+  color: var(--cor-texto-secundario);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+  text-align: center;
+
+  padding-top: 10px;
+}
+
+.rodape-texto {
+  font-size: 0.85rem;
+
+  color: var(--cor-texto-secundario);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+  .pagina {
+    max-width: 100%;
+
+    padding: 25px 20px 45px;
+  }
+
+  .linha-topo {
+    gap: 20px;
+  }
+
+  .calculadora {
+    padding: 25px;
+  }
+
+  .carrossel-gatos {
+    width: 150%;
+  }
+
+  .gato-fundo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .esteira-gatos {
+    gap: 60px;
+  }
+}
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+  .pagina {
+    width: 100%;
+
+    padding: 15px 12px 30px;
+
+    gap: 20px;
+  }
+
+  .cabecalho {
+    min-height: 100px;
+
+    padding: 20px 15px;
+
+    border-radius: 10px;
+  }
+
+  .titulo-principal {
+    font-size: 1.55rem;
+  }
+
+  .subtitulo-cabecalho {
+    font-size: 0.88rem;
+  }
+
+  .linha-topo {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .imagem-gato,
+  .calculadora {
+    width: 100%;
+  }
+
+  .imagem-gato {
+    aspect-ratio: 16 / 10;
+  }
+
+  .calculadora {
+    padding: 22px 18px;
+
+    gap: 16px;
+  }
+
+  .titulo-calculadora {
+    font-size: 1.3rem;
+  }
+
+  .descricao-calculadora {
+    font-size: 0.9rem;
+  }
+
+  .grupo-idade {
+    flex-direction: row;
+
+    gap: 10px;
+  }
+
+  .campo-anos,
+  .campo-meses {
+    padding: 13px 12px;
+
+    font-size: 0.95rem;
+  }
+
+  .botao-calcular {
+    padding: 14px;
+  }
+
+  .resultado {
+    padding: 20px 15px;
+  }
+
+  .idade-humana {
+    font-size: 2.3rem;
+  }
+
+  .informacao {
+    padding: 16px;
+  }
+
+  .informacao-texto {
+    font-size: 0.85rem;
+  }
+
+  .fundo-gatos {
+    opacity: 0.55;
+  }
+
+  .gato-fundo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .esteira-gatos {
+    gap: 35px;
+  }
+
+  .carrossel-gatos {
+    left: -30%;
+    width: 160%;
+    height: 100px;
+  }
+}
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+  .pagina {
+    padding: 10px 10px 25px;
+  }
+
+  .titulo-principal {
+    font-size: 1.35rem;
+  }
+
+  .subtitulo-cabecalho {
+    font-size: 0.82rem;
+  }
+
+  .calculadora {
+    padding: 18px 14px;
+  }
+
+  .titulo-calculadora {
+    font-size: 1.2rem;
+  }
+
+  .descricao-calculadora {
+    font-size: 0.85rem;
+  }
+
+  .grupo-idade {
+    gap: 8px;
+  }
+
+  .campo-anos,
+  .campo-meses {
+    padding: 12px 10px;
+  }
+
+  .rotulo-unidade-input {
+    font-size: 0.75rem;
+  }
+
+  .resultado {
+    padding: 16px 12px;
+  }
+
+  .idade-humana {
+    font-size: 2rem;
+  }
+
+  .informacao {
+    padding: 14px;
+  }
+}
+
+/* =====================================================
+   CELULARES MUITO PEQUENOS
+===================================================== */
+
+@media (max-width: 320px) {
+  .titulo-principal {
+    font-size: 1.2rem;
+  }
+
+  .grupo-idade {
+    flex-direction: column;
+  }
+
+  .campo-idade-unidade {
+    width: 100%;
+  }
+
+  .botao-calcular {
+    font-size: 0.95rem;
+  }
+}

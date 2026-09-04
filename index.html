@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade de Gato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="pagina">
+        <header class="cabecalho">
+            <h1 class="titulo-principal">Calculadora de Idade de Gato</h1>
+            <p class="subtitulo-cabecalho">Descubra quantos anos o seu gato teria se fosse humano</p>
+        </header>
+        <main class="conteudo-principal">
+            <div class="linha-topo">
+                <div class="imagem-gato" aria-hidden="true">
+                    <img src="img">
+                </div>
+                <section class="calculadora" aria-labelledby="titulo-calculadora">
+                    <h2 id="titulo-calculadora" class="titulo-calculadora">Qual é a idade do seu gato?</h2>
+                    <p class="descricao-calculadora">Informe os anos e os meses de idade do seu gato para calcular a
+                        idade equivalente em anos humanos.</p>
+                    <fieldset class="campo-formulario campo-idade-composta">
+                        <legend class="rotulo-idade">Idade do gato</legend>
+                        <div class="grupo-idade">
+                            <div class="campo-idade-unidade">
+                                <input type="number" id="campo-anos" class="campo-anos" name="anos" min="0" step="1"
+                                    placeholder="0" inputmode="numeric">
+                                <label for="campo-anos" class="rotulo-unidade-input">Anos</label>
+                            </div>
+                            <div class="campo-idade-unidade">
+                                <input type="number" id="campo-meses" class="campo-meses" name="meses" min="0" max="11"
+                                    step="1" placeholder="0" inputmode="numeric">
+                                <label for="campo-meses" class="rotulo-unidade-input">Meses</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button type="button" id="botao-calcular" class="botao-calcular">Calcular idade</button>
+                </section>
+            </div>
+            <section class="resultado" id="resultado" aria-live="polite">
+                <p class="resultado-vazio" id="resultado-vazio">O resultado aparecerá aqui após o cálculo.</p>
+                <div class="resultado-conteudo" id="resultado-conteudo">
+                    <p class="resultado-rotulo">Idade em anos humanos</p>
+                    <p class="idade-humana" id="idade-humana">--</p>
+                    <p class="fase-vida" id="fase-vida"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+<div class="fundo-gatos" aria-hidden="true">
+
+    <div class="carrossel-gatos carrossel-1">
+        <div class="esteira-gatos"></div>
+    </div>
+
+    <div class="carrossel-gatos carrossel-2">
+        <div class="esteira-gatos"></div>
+    </div>
+
+    <div class="carrossel-gatos carrossel-3">
+        <div class="esteira-gatos"></div>
+    </div>
+
+    <div class="carrossel-gatos carrossel-4">
+        <div class="esteira-gatos"></div>
+    </div>
+
+    <div class="carrossel-gatos carrossel-5">
+        <div class="esteira-gatos"></div>
+    </div>
+
+    <div class="carrossel-gatos carrossel-6">
+        <div class="esteira-gatos"></div>
+    </div>
+
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
