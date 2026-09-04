@@ -32,10 +32,6 @@ input {
   color: inherit;
 }
 
-/* =========================
-   VARIÁVEIS
-========================= */
-
 :root {
   --color1: #c4e5f6;
   --color2: #d3ecf8;
@@ -72,11 +68,6 @@ input {
 
   --sombra-suave: 0 8px 25px rgba(35, 49, 61, 0.08);
   --sombra-botao: 0 8px 18px rgba(47, 134, 184, 0.28);
-}
-
-/* =========================
-   FUNDO COM GATOS
-========================= */
 
 .fundo-gatos {
   position: fixed;
@@ -176,10 +167,6 @@ input {
     transform: translateX(0);
   }
 }
-
-/* =========================
-   CONTAINER PRINCIPAL
-========================= */
 
 .pagina {
   position: relative;
@@ -287,9 +274,6 @@ input {
   text-align: center;
 }
 
-/* =========================
-   CALCULADORA
-========================= */
 
 .calculadora {
   width: 50%;
@@ -317,10 +301,6 @@ input {
   font-size: 1rem;
   color: var(--cor-texto-secundario);
 }
-
-/* =========================
-   FORMULÁRIO
-========================= */
 
 .campo-formulario {
   display: flex;
@@ -410,11 +390,7 @@ input {
   text-align: center;
 }
 
-/* =========================
-   BOTÃO
-========================= */
-
-.botao-calcular {
+  .botao-calcular {
   width: 100%;
 
   margin-top: 8px;
@@ -453,9 +429,6 @@ input {
   outline-offset: 2px;
 }
 
-/* =========================
-   RESULTADO
-========================= */
 
 .resultado {
   background-color: var(--cor-azul-claro);
@@ -505,9 +478,6 @@ input {
   color: var(--cor-texto-secundario);
 }
 
-/* =========================
-   INFORMAÇÃO
-========================= */
 
 .informacao {
   background-color: var(--cor-branco);
@@ -551,10 +521,6 @@ input {
   color: var(--cor-texto-secundario);
 }
 
-/* =====================================================
-   TABLET
-===================================================== */
-
 @media (max-width: 900px) {
   .pagina {
     max-width: 100%;
@@ -584,9 +550,6 @@ input {
   }
 }
 
-/* =====================================================
-   CELULAR
-===================================================== */
 
 @media (max-width: 700px) {
   .pagina {
@@ -695,9 +658,6 @@ input {
   }
 }
 
-/* =====================================================
-   CELULARES PEQUENOS
-===================================================== */
 
 @media (max-width: 400px) {
   .pagina {
@@ -750,9 +710,6 @@ input {
   }
 }
 
-/* =====================================================
-   CELULARES MUITO PEQUENOS
-===================================================== */
 
 @media (max-width: 320px) {
   .titulo-principal {
