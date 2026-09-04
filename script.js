@@ -46,6 +46,8 @@ botaoCalcular.addEventListener("click", function () {
 
   resultadoVazio.style.display = "none";
   resultadoConteudo.style.display = "block";
+
+  document.getElementById("resultado").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 
