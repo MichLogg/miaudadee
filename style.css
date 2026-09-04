@@ -68,6 +68,7 @@ input {
 
   --sombra-suave: 0 8px 25px rgba(35, 49, 61, 0.08);
   --sombra-botao: 0 8px 18px rgba(47, 134, 184, 0.28);
+}
 
 .fundo-gatos {
   position: fixed;
@@ -171,40 +172,26 @@ input {
 .pagina {
   position: relative;
   z-index: 1;
-
   width: 100%;
   max-width: 1400px;
-
   margin: 0 auto;
-
   padding: 40px 35px 60px;
-
   display: flex;
   flex-direction: column;
-
   gap: 30px;
 }
-
-/* =========================
-   CABEÇALHO
-========================= */
 
 .cabecalho {
   background-color: #c4e5f6;
   border-radius: 12px;
-
   width: 100%;
   min-height: 120px;
-
   padding: 25px 30px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
-
   box-shadow: var(--sombra-suave);
 }
 
@@ -212,23 +199,15 @@ input {
   font-size: clamp(1.8rem, 2.5vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-
   color: var(--cor-texto-principal);
 }
 
 .subtitulo-cabecalho {
   margin-top: 8px;
-
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-
   color: var(--cor-texto-secundario);
-
   max-width: 800px;
 }
-
-/* =========================
-   CONTEÚDO
-========================= */
 
 .conteudo-principal {
   display: flex;
@@ -239,12 +218,9 @@ input {
 .linha-topo {
   display: flex;
   flex-direction: row;
-
   gap: 30px;
-
   align-items: stretch;
 }
-
 
 .imagem-gato {
   width: 50%;
@@ -267,28 +243,19 @@ input {
 .imagem-gato-texto {
   font-size: 1rem;
   font-weight: 500;
-
   color: var(--cor-azul-forte-escuro);
-
   padding: 20px;
   text-align: center;
 }
 
-
 .calculadora {
   width: 50%;
-
   background-color: var(--cor-branco);
-
   box-shadow: var(--sombra-suave);
-
   padding: 35px;
-
   border-radius: var(--raio-borda);
-
   display: flex;
   flex-direction: column;
-
   gap: 20px;
 }
 
@@ -311,18 +278,14 @@ input {
 .rotulo-idade {
   font-size: 0.95rem;
   font-weight: 600;
-
   color: var(--cor-texto-principal);
 }
 
 .campo-idade-composta {
   border: none;
-
   padding: 0;
-
   display: flex;
   flex-direction: column;
-
   gap: 8px;
 }
 
@@ -332,36 +295,26 @@ input {
 
 .grupo-idade {
   display: flex;
-
   gap: 15px;
 }
 
 .campo-idade-unidade {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   gap: 6px;
 }
 
 .campo-anos,
 .campo-meses {
   width: 100%;
-
   padding: 14px 16px;
-
   font-size: 1rem;
   font-family: inherit;
-
   color: var(--cor-texto-principal);
-
   background-color: var(--cor-branco);
-
   border: 1px solid var(--cor-borda);
-
   border-radius: var(--raio-borda-pequeno);
-
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease;
@@ -375,42 +328,29 @@ input {
 .campo-anos:focus,
 .campo-meses:focus {
   outline: none;
-
   border-color: var(--cor-azul-forte);
-
   box-shadow: 0 0 0 3px var(--cor-azul);
 }
 
 .rotulo-unidade-input {
   font-size: 0.85rem;
   font-weight: 500;
-
   color: var(--cor-texto-secundario);
-
   text-align: center;
 }
 
-  .botao-calcular {
+.botao-calcular {
   width: 100%;
-
   margin-top: 8px;
-
   padding: 14px 20px;
-
   font-size: 1rem;
   font-weight: 600;
-
   color: var(--cor-branco);
-
   background-color: var(--cor-azul-forte);
-
   border: none;
   border-radius: 8px;
-
   box-shadow: var(--sombra-botao);
-
   cursor: pointer;
-
   transition:
     background-color 0.15s ease,
     transform 0.1s ease;
@@ -429,102 +369,74 @@ input {
   outline-offset: 2px;
 }
 
-
 .resultado {
   background-color: var(--cor-azul-claro);
-
   border: 1px solid var(--cor-azul);
-
   padding: 25px;
-
   border-radius: var(--raio-borda);
-
   text-align: center;
 }
 
 .resultado-vazio {
   font-size: 0.95rem;
-
   color: var(--cor-texto-secundario);
 }
 
 .resultado-conteudo {
   display: none;
-
   flex-direction: column;
-
   gap: 5px;
 }
 
 .resultado-rotulo {
   font-size: 0.9rem;
-
   font-weight: 600;
-
   color: var(--cor-texto-secundario);
 }
 
 .idade-humana {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-
   font-weight: 700;
-
   color: var(--cor-azul-forte-escuro);
 }
 
 .fase-vida {
   font-size: 0.95rem;
-
   color: var(--cor-texto-secundario);
 }
 
-
 .informacao {
   background-color: var(--cor-branco);
-
   border-left: 4px solid var(--cor-azul-forte);
-
   padding: 20px;
-
   border-radius: 0 var(--raio-borda-pequeno) var(--raio-borda-pequeno) 0;
-
   box-shadow: var(--sombra-suave);
 }
 
 .informacao-titulo {
   font-size: 1rem;
-
   font-weight: 600;
-
   margin-bottom: var(--espaco-xs);
 }
 
 .informacao-texto {
   font-size: 0.9rem;
-
   color: var(--cor-texto-secundario);
 }
 
-/* =========================
-   RODAPÉ
-========================= */
-
 .rodape {
   text-align: center;
-
   padding-top: 10px;
 }
 
 .rodape-texto {
   font-size: 0.85rem;
-
   color: var(--cor-texto-secundario);
 }
 
 @media (max-width: 900px) {
   .pagina {
     max-width: 100%;
-
     padding: 25px 20px 45px;
   }
 
@@ -550,21 +462,16 @@ input {
   }
 }
 
-
 @media (max-width: 700px) {
   .pagina {
     width: 100%;
-
     padding: 15px 12px 30px;
-
     gap: 20px;
   }
 
   .cabecalho {
     min-height: 100px;
-
     padding: 20px 15px;
-
     border-radius: 10px;
   }
 
@@ -578,7 +485,6 @@ input {
 
   .linha-topo {
     flex-direction: column;
-
     gap: 20px;
   }
 
@@ -593,7 +499,6 @@ input {
 
   .calculadora {
     padding: 22px 18px;
-
     gap: 16px;
   }
 
@@ -607,14 +512,12 @@ input {
 
   .grupo-idade {
     flex-direction: row;
-
     gap: 10px;
   }
 
   .campo-anos,
   .campo-meses {
     padding: 13px 12px;
-
     font-size: 0.95rem;
   }
 
@@ -657,7 +560,6 @@ input {
     height: 100px;
   }
 }
-
 
 @media (max-width: 400px) {
   .pagina {
@@ -709,7 +611,6 @@ input {
     padding: 14px;
   }
 }
-
 
 @media (max-width: 320px) {
   .titulo-principal {
